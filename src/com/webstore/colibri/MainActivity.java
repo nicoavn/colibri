@@ -23,8 +23,9 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				mapIntent = new Intent(MainActivity.this, HelloGoogleMaps.class);
-				startActivity(mapIntent);
+				// mapIntent = new Intent(MainActivity.this,
+				// HelloGoogleMaps.class);
+				// startActivity(mapIntent);
 			}
 		});
 

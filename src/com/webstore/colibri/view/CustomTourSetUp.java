@@ -43,7 +43,9 @@ public class CustomTourSetUp extends Activity {
 			public void onClick(View v) {
 				Intent data = new Intent();
 				ArrayList<Category> choosenCategories = new ArrayList<Category>();
-				data.putExtra("Categories", choosenCategories);
+				for (Category c : choosenCategories) {
+					data.putExtra(c.name(), c);
+				}
 
 				placesPick = new Intent(CustomTourSetUp.this,
 						GMapActivity.class);

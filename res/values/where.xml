@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="where_target_array">
+        <item>All Country</item>
+        <item>Southwest</item>
+        <item>Southeast</item>
+        <item>North</item>
+    </string-array>
+</resources>

@@ -8,6 +8,9 @@
 package com.webstore.colibri;
 
 public final class R {
+    public static final class array {
+        public static final int where_target_array=0x7f0a0000;
+    }
     public static final class attr {
         /** 
     The size of the ad. It must be one of BANNER, FULL_BANNER, LEADERBOARD,
@@ -221,25 +224,35 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f02001c;
     }
     public static final class id {
-        public static final int action_settings=0x7f050008;
+        public static final int action_settings=0x7f050011;
+        public static final int build_custom_tour_btn=0x7f050006;
+        public static final int category_label=0x7f050009;
+        public static final int col_category_all=0x7f05000a;
+        public static final int col_category_cultural=0x7f05000b;
+        public static final int col_category_eco=0x7f05000c;
+        public static final int col_where=0x7f05000e;
+        public static final int custom_tour_submit=0x7f05000f;
         public static final int hybrid=0x7f050004;
+        public static final int label_where=0x7f05000d;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
         public static final int satellite=0x7f050002;
-        public static final int showMap=0x7f050006;
+        public static final int show_map=0x7f050005;
         public static final int terrain=0x7f050003;
-        public static final int textView1=0x7f050005;
-        public static final int the_map=0x7f050007;
+        public static final int the_map=0x7f050010;
+        public static final int title_label=0x7f050007;
+        public static final int tour_title=0x7f050008;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f070000;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int map_view_layout=0x7f030001;
+        public static final int custom_set_up=0x7f030001;
+        public static final int map_view_layout=0x7f030002;
     }
     public static final class menu {
-        public static final int main=0x7f0a0000;
+        public static final int main=0x7f0b0000;
     }
     public static final class string {
         public static final int action_settings=0x7f06001b;
@@ -267,6 +280,15 @@ containing a value of this type.
         [CHAR LIMIT=70] 
          */
         public static final int auth_client_using_bad_version_title=0x7f060014;
+        public static final int col_all=0x7f06001f;
+        public static final int col_cultural=0x7f060020;
+        public static final int col_custom_tour_btn=0x7f060023;
+        public static final int col_custom_tour_name=0x7f06001d;
+        public static final int col_eco=0x7f060021;
+        public static final int col_pick_places=0x7f060024;
+        public static final int col_show_map_btn_text=0x7f06001c;
+        public static final int col_tour_category=0x7f06001e;
+        public static final int col_where=0x7f060022;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -338,7 +360,6 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f060013;
-        public static final int hello_world=0x7f06001c;
     }
     public static final class style {
         /** 

@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">colibri</string>
+    <string name="app_name">Colibrí</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="col_show_map_btn_text">Show Map</string>
+    <string name="col_custom_tour_name">Tour Title</string>
+    <string name="col_tour_category">Category</string>
+    <string name="col_all">All</string>
+    <string name="col_cultural">Cultural</string>
+    <string name="col_eco">Ecological</string>
+    <string name="col_where">Where</string>
+    <string name="col_custom_tour_btn">Build Custom Tour</string>
+    <string name="col_pick_places">Pick Places</string>
 
 </resources>

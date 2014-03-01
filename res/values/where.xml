@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string-array name="where_target_array">
         <item>All Country</item>
-        <item>Southwest</item>
-        <item>Southeast</item>
         <item>North</item>
+        <item>Southwest</item>
+        <item>Southeast</item>        
+        <item>Azua</item>
+        <item>Bahoruco</item>
+        <item>Barahona</item>
+        <item>Dajabón</item>
+        <item>Distrito Nacional</item>
+        <item>Duarte</item>
+        <item>Elías Piña</item>
+        <item>El Seibo</item>
+        <item>Espaillat</item>
+        <item>Hato Mayor</item>
+        <item>Hermanas Mirabal</item>
+        <item>Independencia</item>
+        <item>La Altagracia</item>
+        <item>La Romana</item>
+        <item>La Vega</item>
+        <item>María Trinidad Sánchez</item>
+        <item>Monseñor Nouel</item>
+        <item>Monte Cristi</item>
+        <item>Monte Plata</item>
+        <item>Pedernales</item>
+        <item>Peravia</item>
+        <item>Puerto Plata</item>
+        <item>Samaná</item>
+        <item>Sánchez Ramírez</item>
+        <item>San Cristóbal</item>
+        <item>San José de Ocoa</item>
+        <item>San Juan</item>
+        <item>San Pedro de Macorís</item>
+        <item>Santiago</item>
+        <item>Santiago Rodríguez</item>
+        <item>Santo Domingo</item>
+        <item>Valverde</item>
     </string-array>
+
 </resources>

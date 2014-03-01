@@ -69,6 +69,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <TextView
+        android:id="@+id/label_zone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/col_zone"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/col_zone_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10" />
+
     <Button
         android:id="@+id/custom_tour_submit"
         android:layout_width="wrap_content"

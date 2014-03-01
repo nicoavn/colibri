@@ -8,7 +8,7 @@ import com.webstore.colibri.model.PlaceLocation;
 
 public class TourPlaceService {
 
-	public ArrayList<Place> getPlacesByCategories(
+	public static ArrayList<Place> getPlacesByCategories(
 			ArrayList<Category> categories, int max, PlaceLocation[] pl) {
 		ArrayList<Place> placesToReturn = new ArrayList<Place>();
 

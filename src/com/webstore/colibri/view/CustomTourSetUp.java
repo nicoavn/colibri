@@ -1,7 +1,5 @@
 package com.webstore.colibri.view;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -33,22 +31,25 @@ public class CustomTourSetUp extends Activity {
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		whereSpinner.setAdapter(adapter);
 
-		CheckBox cat_all = (CheckBox) findViewById(R.id.col_category_all);
-		CheckBox cat_cultural = (CheckBox) findViewById(R.id.col_category_cultural);
-		CheckBox cat_echo = (CheckBox) findViewById(R.id.col_category_eco);
+		final CheckBox cat_all = (CheckBox) findViewById(R.id.col_category_all);
+		final CheckBox cat_cultural = (CheckBox) findViewById(R.id.col_category_cultural);
+		final CheckBox cat_eco = (CheckBox) findViewById(R.id.col_category_eco);
 
 		submit = (Button) findViewById(R.id.custom_tour_submit);
 		submit.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent data = new Intent();
-				ArrayList<Category> choosenCategories = new ArrayList<Category>();
-				for (Category c : choosenCategories) {
-					data.putExtra(c.name(), c);
-				}
-
 				placesPick = new Intent(CustomTourSetUp.this,
 						GMapActivity.class);
+				if (cat_all.isChecked())
+					placesPick.putExtra(Category.ALL.name(), Category.ALL);
+				if (cat_cultural.isChecked())
+					placesPick.putExtra(Category.CULTURAL.name(),
+							Category.CULTURAL);
+				if (cat_eco.isChecked())
+					placesPick.putExtra(Category.ECOLOGICAL.name(),
+							Category.ECOLOGICAL);
+
 				startActivity(placesPick);
 			}
 		});
@@ -67,7 +68,7 @@ public class CustomTourSetUp extends Activity {
 			}
 		});
 
-		cat_echo.setOnClickListener(new OnClickListener() {
+		cat_eco.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 

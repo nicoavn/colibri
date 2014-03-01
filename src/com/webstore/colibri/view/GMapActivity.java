@@ -21,18 +21,26 @@ import com.webstore.colibri.model.Category;
 public class GMapActivity extends FragmentActivity {
 
 	private GoogleMap map;
-	private ArrayList<Category> choosenCategories;
+	private final ArrayList<Category> choosenCatergories = new ArrayList<Category>();
+
+	// private ArrayList<Category> choosenCategories;
 
 	@Override
 	protected void onCreate(Bundle arg0) {
-		// TODO Auto-generated method stub
 		super.onCreate(arg0);
 		setContentView(R.layout.map_view_layout);
 
-		// "Categories"
-
 		Intent intent = getIntent();
-		intent.getSerializableExtra("Categories");
+
+		Category tempCategory;
+
+		// "Categories"
+		for (Category c : Category.values()) {
+			tempCategory = (Category) intent.getSerializableExtra(c.name());
+			if (tempCategory != null) {
+				choosenCatergories.add(tempCategory);
+			}
+		}
 
 		map = ((MapFragment) getFragmentManager()
 				.findFragmentById(R.id.the_map)).getMap();

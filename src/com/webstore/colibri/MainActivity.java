@@ -1,15 +1,33 @@
 package com.webstore.colibri;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 public class MainActivity extends Activity {
+
+	private Button showMap;
+	Intent mapIntent;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		showMap = (Button) findViewById(R.id.showMap);
+		showMap.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				mapIntent = new Intent(MainActivity.this, HelloGoogleMaps.class);
+				startActivity(mapIntent);
+			}
+		});
+
 	}
 
 	@Override

@@ -6,6 +6,14 @@ public class TourStop {
 
 	}
 
+	public int getTourStopId() {
+		return TourStopId;
+	}
+
+	public void setTourStopId(int tourStopId) {
+		TourStopId = tourStopId;
+	}
+
 	public Place getPlace() {
 		return place;
 	}
@@ -22,6 +30,7 @@ public class TourStop {
 		this.secuence = secuence;
 	}
 
+	private int TourStopId;
 	private Place place;
 	private int secuence;
 }

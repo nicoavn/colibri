@@ -8,11 +8,18 @@ public class Place {
 	private String name;
 	private double latitude;
 	private double longitude;
-	private PlaceType type;
+	private Category placeCategory;
 	private Bitmap picture;
+	private Zone zone;
 
 	public Place() {
 
+	}
+
+	public Place(String placeName, double latitude, double longitude) {
+		this.name = placeName;
+		this.latitude = latitude;
+		this.longitude = longitude;
 	}
 
 	public int getPlaceId() {
@@ -47,12 +54,12 @@ public class Place {
 		this.longitude = longitude;
 	}
 
-	public PlaceType getType() {
-		return type;
+	public Category getPlaceCategory() {
+		return placeCategory;
 	}
 
-	public void setType(PlaceType type) {
-		this.type = type;
+	public void setPlaceCategory(Category placeCategory) {
+		this.placeCategory = placeCategory;
 	}
 
 	public Bitmap getPicture() {
@@ -61,6 +68,14 @@ public class Place {
 
 	public void setPicture(Bitmap picture) {
 		this.picture = picture;
+	}
+
+	public Zone getZone() {
+		return zone;
+	}
+
+	public void setZone(Zone zone) {
+		this.zone = zone;
 	}
 
 }

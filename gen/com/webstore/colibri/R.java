@@ -9,6 +9,10 @@ package com.webstore.colibri;
 
 public final class R {
     public static final class array {
+        /**          <item>Santiago Rodríguez</item> 
+         <item>Santo Domingo</item> 
+         <item>Valverde</item> 
+         */
         public static final int where_target_array=0x7f0a0000;
     }
     public static final class attr {
@@ -217,11 +221,12 @@ containing a value of this type.
         public static final int common_signin_btn_text_normal_light=0x7f020015;
         public static final int common_signin_btn_text_pressed_dark=0x7f020016;
         public static final int common_signin_btn_text_pressed_light=0x7f020017;
-        public static final int ic_launcher=0x7f020018;
-        public static final int ic_plusone_medium_off_client=0x7f020019;
-        public static final int ic_plusone_small_off_client=0x7f02001a;
-        public static final int ic_plusone_standard_off_client=0x7f02001b;
-        public static final int ic_plusone_tall_off_client=0x7f02001c;
+        public static final int greenmarker=0x7f020018;
+        public static final int ic_launcher=0x7f020019;
+        public static final int ic_plusone_medium_off_client=0x7f02001a;
+        public static final int ic_plusone_small_off_client=0x7f02001b;
+        public static final int ic_plusone_standard_off_client=0x7f02001c;
+        public static final int ic_plusone_tall_off_client=0x7f02001d;
     }
     public static final class id {
         public static final int action_settings=0x7f050013;
@@ -252,6 +257,7 @@ containing a value of this type.
         public static final int activity_main=0x7f030000;
         public static final int custom_set_up=0x7f030001;
         public static final int map_view_layout=0x7f030002;
+        public static final int marker_layout=0x7f030003;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;

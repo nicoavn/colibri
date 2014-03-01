@@ -3,7 +3,6 @@ package com.webstore.colibri.view;
 import java.util.ArrayList;
 
 import android.content.Intent;
-import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -13,21 +12,18 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.webstore.colibri.R;
 import com.webstore.colibri.model.Category;
-import com.webstore.colibri.model.Place;
-import com.webstore.colibri.model.PlaceLocation;
-import com.webstore.colibri.model.Region;
-import com.webstore.colibri.model.Zone;
-import com.webstore.colibri.service.TourPlaceService;
 
 public class GMapActivity extends FragmentActivity {
 
 	private GoogleMap map;
 	private final ArrayList<Category> choosenCategories = new ArrayList<Category>();
+	private final ArrayList<Marker> selectedMarkers = new ArrayList<Marker>();
 	Intent intent;
 
 	@Override
@@ -48,44 +44,50 @@ public class GMapActivity extends FragmentActivity {
 		}
 
 		// "Where"
-		String where = intent.getStringExtra("where");
+		// String where = intent.getStringExtra("where");
 
 		// "Zone"
-		String zone = intent.getStringExtra("zone");
+		// String zone = intent.getStringExtra("zone");
 
-		Place p = new Place();
+		// Place p = new Place();
+		//
+		// p.setLatitude(19.455869);
+		// p.setLongitude(-70.707113);
+		//
+		// p.setName(where);
 
-		p.setLatitude(19.455869);
-		p.setLongitude(-70.707113);
+		// Region r = new Region();
+		//
+		// Zone z = new Zone();
+		//
+		// z.setName(zone);
 
-		p.setName(where);
+		// PlaceLocation[] pl = { r, z };
 
-		Region r = new Region();
-
-		Zone z = new Zone();
-
-		z.setName(zone);
-
-		PlaceLocation[] pl = { r, z };
-
-		ArrayList<Place> places = TourPlaceService.getPlacesByCategories(
-				choosenCategories, 3, pl);
+		// ArrayList<Place> places = TourPlaceService.getPlacesByCategories(
+		// choosenCategories, 3, null);
 
 		map = ((MapFragment) getFragmentManager()
 				.findFragmentById(R.id.the_map)).getMap();
 
 		if (map != null) {
 			Log.i("MapTag", "Map Cool");
-			focusMap(null);
+			addMarkers(map, new ArrayList<Marker>());
+			focusMap(new LatLng(19.455869, -70.707113), 15);
 		} else {
 			Log.e("MapTag", "Null Map");
 		}
 
 		map.setOnMarkerClickListener(new OnMarkerClickListener() {
-
 			@Override
 			public boolean onMarkerClick(Marker marker) {
-
+				if (selectedMarkers.contains(marker)) {
+					selectedMarkers.remove(marker);
+				} else {
+					selectedMarkers.add(marker);
+					marker.setIcon(BitmapDescriptorFactory
+							.fromResource(R.drawable.greenmarker));
+				}
 				return false;
 			}
 		});
@@ -101,16 +103,16 @@ public class GMapActivity extends FragmentActivity {
 
 	}
 
-	private void focusMap(Location[] locations) {
+	private void focusMap(LatLng focusTarget, int zoomLevel) {
 
-		CameraUpdate center = CameraUpdateFactory.newLatLng(new LatLng(p
-				.getLatitude(), p.getLongitude()));
-		CameraUpdate zoom = CameraUpdateFactory.zoomTo(15);
+		CameraUpdate center = CameraUpdateFactory.newLatLng(focusTarget);
+		CameraUpdate zoom = CameraUpdateFactory.zoomTo(zoomLevel);
 
 		map.moveCamera(center);
 		map.animateCamera(zoom);
+	}
 
-		ArrayList<Marker> places = new ArrayList<Marker>();
+	private void addMarkers(GoogleMap map, ArrayList<Marker> places) {
 
 		places.add(map.addMarker(new MarkerOptions().position(
 				new LatLng(19.450892, -70.694625)).title(

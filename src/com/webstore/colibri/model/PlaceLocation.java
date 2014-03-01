@@ -1,5 +1,7 @@
 package com.webstore.colibri.model;
 
-public abstract class PlaceLocation {
+import com.google.android.gms.maps.model.LatLng;
 
+public abstract class PlaceLocation {
+	protected LatLng location;
 }

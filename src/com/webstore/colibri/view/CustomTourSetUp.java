@@ -1,5 +1,7 @@
 package com.webstore.colibri.view;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +16,7 @@ import android.widget.Spinner;
 
 import com.webstore.colibri.R;
 import com.webstore.colibri.model.Category;
+import com.webstore.colibri.model.Place;
 
 public class CustomTourSetUp extends Activity {
 
@@ -100,6 +103,13 @@ public class CustomTourSetUp extends Activity {
 		super.onActivityResult(requestCode, resultCode, data);
 		if (resultCode == RESULT_OK) {
 			if (requestCode == MAP_REQUEST) {
+
+				ArrayList<Place> places = (ArrayList<Place>) data.getExtras()
+						.get("places");
+
+				for (Place p : places) {
+					Log.i("Places", p.toString());
+				}
 
 			}
 		}

@@ -21,6 +21,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.webstore.colibri.R;
 import com.webstore.colibri.model.Category;
+import com.webstore.colibri.model.Place;
 
 public class GMapActivity extends FragmentActivity {
 
@@ -103,7 +104,9 @@ public class GMapActivity extends FragmentActivity {
 			@Override
 			public void onClick(View v) {
 				Intent resultData = new Intent();
-				resultData.putExtra("Selected Markers", selectedMarkers);
+				ArrayList<Place> resultingPlaces = new ArrayList<Place>();
+
+				resultData.putExtra("places", resultingPlaces);
 				setResult(RESULT_OK, resultData);
 			}
 		});

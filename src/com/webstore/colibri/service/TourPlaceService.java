@@ -2,6 +2,7 @@ package com.webstore.colibri.service;
 
 import java.util.ArrayList;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.webstore.colibri.model.Category;
 import com.webstore.colibri.model.Place;
 import com.webstore.colibri.model.PlaceLocation;
@@ -16,10 +17,12 @@ public class TourPlaceService {
 			// Filter by location
 		}
 
-		placesToReturn.add(new Place("Fortaleza", 19.4481, -70.702993));
-		placesToReturn.add(new Place("Parque Colón", 19.450083, -70.699861));
+		placesToReturn.add(new Place("Fortaleza", new LatLng(19.4481,
+				-70.702993)));
+		placesToReturn.add(new Place("Parque Colón", new LatLng(19.450083,
+				-70.699861)));
 		placesToReturn.add(new Place("Monumento Natural Pico Diego de Ocampo",
-				19.575156, -70.774468));
+				new LatLng(19.575156, -70.774468)));
 
 		return placesToReturn;
 	}

@@ -2,24 +2,23 @@ package com.webstore.colibri.model;
 
 import android.graphics.Bitmap;
 
+import com.google.android.gms.maps.model.LatLng;
+
 public class Place {
 
 	private int placeId;
 	private String name;
-	private double latitude;
-	private double longitude;
+	private LatLng location;
 	private Category placeCategory;
 	private Bitmap picture;
-	private Zone zone;
 
 	public Place() {
 
 	}
 
-	public Place(String placeName, double latitude, double longitude) {
+	public Place(String placeName, LatLng location) {
 		this.name = placeName;
-		this.latitude = latitude;
-		this.longitude = longitude;
+		this.location = location;
 	}
 
 	public int getPlaceId() {
@@ -38,20 +37,12 @@ public class Place {
 		this.name = name;
 	}
 
-	public double getLatitude() {
-		return latitude;
+	public LatLng getLocation() {
+		return location;
 	}
 
-	public void setLatitude(double latitude) {
-		this.latitude = latitude;
-	}
-
-	public double getLongitude() {
-		return longitude;
-	}
-
-	public void setLongitude(double longitude) {
-		this.longitude = longitude;
+	public void setLocation(LatLng location) {
+		this.location = location;
 	}
 
 	public Category getPlaceCategory() {
@@ -68,14 +59,6 @@ public class Place {
 
 	public void setPicture(Bitmap picture) {
 		this.picture = picture;
-	}
-
-	public Zone getZone() {
-		return zone;
-	}
-
-	public void setZone(Zone zone) {
-		this.zone = zone;
 	}
 
 }

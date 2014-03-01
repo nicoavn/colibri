@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -24,6 +27,7 @@ public class GMapActivity extends FragmentActivity {
 	private GoogleMap map;
 	private final ArrayList<Category> choosenCategories = new ArrayList<Category>();
 	private final ArrayList<Marker> selectedMarkers = new ArrayList<Marker>();
+	private Button finishBtn;
 	Intent intent;
 
 	@Override
@@ -83,12 +87,24 @@ public class GMapActivity extends FragmentActivity {
 			public boolean onMarkerClick(Marker marker) {
 				if (selectedMarkers.contains(marker)) {
 					selectedMarkers.remove(marker);
+					marker.setIcon(BitmapDescriptorFactory
+							.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
 				} else {
 					selectedMarkers.add(marker);
 					marker.setIcon(BitmapDescriptorFactory
 							.fromResource(R.drawable.greenmarker));
 				}
 				return false;
+			}
+		});
+
+		finishBtn = (Button) findViewById(R.id.map_done_btn);
+		finishBtn.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent resultData = new Intent();
+				resultData.putExtra("Selected Markers", selectedMarkers);
+				setResult(RESULT_OK, resultData);
 			}
 		});
 

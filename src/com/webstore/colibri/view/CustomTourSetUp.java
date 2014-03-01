@@ -22,6 +22,8 @@ public class CustomTourSetUp extends Activity {
 	private Intent placesPick;
 	private EditText zone;
 
+	public static int MAP_REQUEST = 1;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -67,7 +69,7 @@ public class CustomTourSetUp extends Activity {
 
 				Log.i("info", whereSpinner.getSelectedItem().toString());
 
-				startActivity(placesPick);
+				startActivityForResult(placesPick, MAP_REQUEST);
 			}
 		});
 
@@ -91,5 +93,15 @@ public class CustomTourSetUp extends Activity {
 
 			}
 		});
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if (resultCode == RESULT_OK) {
+			if (requestCode == MAP_REQUEST) {
+
+			}
+		}
 	}
 }

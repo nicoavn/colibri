@@ -13,5 +13,6 @@
     <string name="col_custom_tour_btn">Build Custom Tour</string>
     <string name="col_pick_places">Pick Places</string>
     <string name="col_zone">Zone</string>
+    <string name="col_finish_tour">Finish Tour</string>
 
 </resources>

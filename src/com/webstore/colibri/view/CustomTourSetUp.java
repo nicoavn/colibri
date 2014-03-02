@@ -24,14 +24,16 @@ public class CustomTourSetUp extends Activity {
 	private Button submit;
 	private Intent placesPick;
 	private EditText zone;
+	public ArrayList<Place> choosenPlaces;
 
 	public static int MAP_REQUEST = 1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.custom_set_up);
+
+		GlobalActivityHandlerUtility.customTourSetUp = this;
 
 		whereSpinner = (Spinner) findViewById(R.id.col_where);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -70,8 +72,6 @@ public class CustomTourSetUp extends Activity {
 					placesPick.putExtra("zone", zone.getText().toString());
 				}
 
-				Log.i("info", whereSpinner.getSelectedItem().toString());
-
 				startActivityForResult(placesPick, MAP_REQUEST);
 			}
 		});
@@ -101,14 +101,21 @@ public class CustomTourSetUp extends Activity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
+
+		Log.i("tag:request", "" + requestCode);
+		Log.i("tag:result", "" + resultCode);
+
 		if (resultCode == RESULT_OK) {
 			if (requestCode == MAP_REQUEST) {
 
-				ArrayList<Place> places = (ArrayList<Place>) data.getExtras()
-						.get("places");
+				ArrayList<Place> places = this.choosenPlaces;
 
-				for (Place p : places) {
-					Log.i("Places", p.toString());
+				if (places != null) {
+
+					for (Place p : places) {
+						Log.i("Places", p.toString());
+					}
+
 				}
 
 			}

@@ -34,6 +34,7 @@ public class GMapActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
+		GlobalActivityHandlerUtility.gMapActivity = this;
 		setContentView(R.layout.map_view_layout);
 
 		intent = getIntent();
@@ -103,11 +104,28 @@ public class GMapActivity extends FragmentActivity {
 		finishBtn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent resultData = new Intent();
 				ArrayList<Place> resultingPlaces = new ArrayList<Place>();
 
-				resultData.putExtra("places", resultingPlaces);
-				setResult(RESULT_OK, resultData);
+				Place tempPlace;
+
+				for (Marker m : selectedMarkers) {
+					tempPlace = new Place();
+					tempPlace.setLocation(m.getPosition());
+					tempPlace.setName(m.getTitle());
+
+					resultingPlaces.add(tempPlace);
+				}
+
+				setResult(RESULT_OK);
+
+				GlobalActivityHandlerUtility.customTourSetUp.choosenPlaces = resultingPlaces;
+
+				Log.d("debug",
+						""
+								+ GlobalActivityHandlerUtility.customTourSetUp.choosenPlaces
+										.size());
+
+				finish();
 			}
 		});
 

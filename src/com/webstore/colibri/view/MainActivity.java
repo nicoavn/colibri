@@ -20,6 +20,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		GlobalActivityHandlerUtility.mainActivity = this;
 		setContentView(R.layout.activity_main);
 
 		showMap = (Button) findViewById(R.id.show_map);

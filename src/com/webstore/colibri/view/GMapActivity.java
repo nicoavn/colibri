@@ -120,11 +120,6 @@ public class GMapActivity extends FragmentActivity {
 
 				GlobalActivityHandlerUtility.customTourSetUp.choosenPlaces = resultingPlaces;
 
-				Log.d("debug",
-						""
-								+ GlobalActivityHandlerUtility.customTourSetUp.choosenPlaces
-										.size());
-
 				finish();
 			}
 		});

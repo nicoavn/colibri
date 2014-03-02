@@ -17,14 +17,20 @@ import android.widget.Spinner;
 import com.webstore.colibri.R;
 import com.webstore.colibri.model.Category;
 import com.webstore.colibri.model.Place;
+import com.webstore.colibri.model.Tour;
+import com.webstore.colibri.model.TourStop;
+import com.webstore.colibri.persistence.TourPersistance;
 
 public class CustomTourSetUp extends Activity {
 
 	private Spinner whereSpinner;
 	private Button submit;
 	private Intent placesPick;
+	private EditText name;
 	private EditText zone;
 	public ArrayList<Place> choosenPlaces;
+	public ArrayList<TourStop> endingStops = new ArrayList<TourStop>();
+	public Tour tour;
 
 	public static int MAP_REQUEST = 1;
 
@@ -46,6 +52,7 @@ public class CustomTourSetUp extends Activity {
 		final CheckBox cat_cultural = (CheckBox) findViewById(R.id.col_category_cultural);
 		final CheckBox cat_eco = (CheckBox) findViewById(R.id.col_category_eco);
 
+		name = (EditText) findViewById(R.id.tour_title);
 		zone = (EditText) findViewById(R.id.col_zone_field);
 
 		submit = (Button) findViewById(R.id.custom_tour_submit);
@@ -102,20 +109,26 @@ public class CustomTourSetUp extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 
-		Log.i("tag:request", "" + requestCode);
-		Log.i("tag:result", "" + resultCode);
+		Log.d("RequestCode:", "" + requestCode);
+		Log.d("MAP_REQUEST:", "" + MAP_REQUEST);
+
+		TourStop tempTourStop;
 
 		if (resultCode == RESULT_OK) {
 			if (requestCode == MAP_REQUEST) {
-
 				ArrayList<Place> places = this.choosenPlaces;
-
 				if (places != null) {
-
+					int counter = 1;
 					for (Place p : places) {
-						Log.i("Places", p.toString());
+						tempTourStop = new TourStop();
+						tempTourStop.setPlace(p);
+						tempTourStop.setSecuence(counter);
+						endingStops.add(tempTourStop);
+						counter++;
 					}
-
+					tour.setPlacesToGo(endingStops);
+					tour.setTourTitle(name.getText().toString());
+					TourPersistance.persist(tour);
 				}
 
 			}

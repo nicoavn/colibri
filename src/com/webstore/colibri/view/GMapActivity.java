@@ -116,9 +116,9 @@ public class GMapActivity extends FragmentActivity {
 					resultingPlaces.add(tempPlace);
 				}
 
-				setResult(RESULT_OK);
-
 				GlobalActivityHandlerUtility.customTourSetUp.choosenPlaces = resultingPlaces;
+
+				setResult(RESULT_OK);
 
 				finish();
 			}

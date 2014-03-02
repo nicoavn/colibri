@@ -59,6 +59,9 @@ public class CustomTourSetUp extends Activity {
 		finishTour.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				Intent drawerIntent = new Intent(CustomTourSetUp.this,
+						TourRouteDrawer.class);
+				startActivity(drawerIntent);
 
 			}
 		});

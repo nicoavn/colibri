@@ -221,15 +221,22 @@ containing a value of this type.
         public static final int common_signin_btn_text_normal_light=0x7f020015;
         public static final int common_signin_btn_text_pressed_dark=0x7f020016;
         public static final int common_signin_btn_text_pressed_light=0x7f020017;
-        public static final int greenmarker=0x7f020018;
-        public static final int ic_launcher=0x7f020019;
-        public static final int ic_plusone_medium_off_client=0x7f02001a;
-        public static final int ic_plusone_small_off_client=0x7f02001b;
-        public static final int ic_plusone_standard_off_client=0x7f02001c;
-        public static final int ic_plusone_tall_off_client=0x7f02001d;
+        public static final int flagblue=0x7f020018;
+        public static final int flagend=0x7f020019;
+        public static final int flaggreen=0x7f02001a;
+        public static final int flagpink=0x7f02001b;
+        public static final int greenmarker=0x7f02001c;
+        public static final int ic_launcher=0x7f02001d;
+        public static final int ic_plusone_medium_off_client=0x7f02001e;
+        public static final int ic_plusone_small_off_client=0x7f02001f;
+        public static final int ic_plusone_standard_off_client=0x7f020020;
+        public static final int ic_plusone_tall_off_client=0x7f020021;
+        public static final int markersset=0x7f020022;
+        public static final int pollo=0x7f020023;
     }
     public static final class id {
-        public static final int action_settings=0x7f050017;
+        public static final int action_settings=0x7f050016;
+        public static final int asd=0x7f050015;
         public static final int btn_give_tour=0x7f050012;
         public static final int build_custom_tour_btn=0x7f050006;
         public static final int category_label=0x7f050009;
@@ -239,8 +246,6 @@ containing a value of this type.
         public static final int col_where=0x7f05000e;
         public static final int col_zone_field=0x7f050010;
         public static final int custom_tour_submit=0x7f050011;
-        public static final int drawer_finish_btn=0x7f050016;
-        public static final int drawer_map=0x7f050015;
         public static final int hybrid=0x7f050004;
         public static final int label_where=0x7f05000d;
         public static final int label_zone=0x7f05000f;

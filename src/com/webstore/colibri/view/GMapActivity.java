@@ -165,6 +165,14 @@ public class GMapActivity extends FragmentActivity {
 			markers.add(map.addMarker(new MarkerOptions().position(
 					new LatLng(19.445672, -70.714066)).title(
 					"Las Aromas Golf Club")));
+
+			Marker polloRey = map.addMarker(new MarkerOptions().position(
+					new LatLng(19.456395, -70.709887)).title("Pollo Rey"));
+			polloRey.setIcon(BitmapDescriptorFactory
+					.fromResource(R.drawable.pollo));
+
+			markers.add(polloRey);
+
 		}
 	}
 }

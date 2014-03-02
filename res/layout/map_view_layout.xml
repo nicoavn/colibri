@@ -9,7 +9,7 @@
     <fragment
 	    android:id="@+id/the_map"
 	    android:layout_width="match_parent"
-	    android:layout_height="380dp"
+	    android:layout_height="740dp"
 	    android:name="com.google.android.gms.maps.MapFragment"
 	     />
 

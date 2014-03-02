@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -25,6 +24,7 @@ public class CustomTourSetUp extends Activity {
 
 	private Spinner whereSpinner;
 	private Button submit;
+	private Button finishTour;
 	private Intent placesPick;
 	private EditText name;
 	private EditText zone;
@@ -54,6 +54,14 @@ public class CustomTourSetUp extends Activity {
 
 		name = (EditText) findViewById(R.id.tour_title);
 		zone = (EditText) findViewById(R.id.col_zone_field);
+
+		finishTour = (Button) findViewById(R.id.btn_give_tour);
+		finishTour.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+
+			}
+		});
 
 		submit = (Button) findViewById(R.id.custom_tour_submit);
 		submit.setOnClickListener(new OnClickListener() {
@@ -109,9 +117,6 @@ public class CustomTourSetUp extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 
-		Log.d("RequestCode:", "" + requestCode);
-		Log.d("MAP_REQUEST:", "" + MAP_REQUEST);
-
 		TourStop tempTourStop;
 
 		if (resultCode == RESULT_OK) {
@@ -126,6 +131,7 @@ public class CustomTourSetUp extends Activity {
 						endingStops.add(tempTourStop);
 						counter++;
 					}
+					tour = new Tour();
 					tour.setPlacesToGo(endingStops);
 					tour.setTourTitle(name.getText().toString());
 					TourPersistance.persist(tour);

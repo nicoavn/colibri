@@ -56,6 +56,11 @@
 			android:name="com.webstore.colibri.view.CustomTourSetUp"
 			android:label="@string/app_name">
         </activity>
+        
+        <activity
+            android:name="com.webstore.colibri.view.TourRouteDrawer"
+            android:label="@string/app_name">            
+        </activity>
                 
         <uses-library android:name="com.google.android.maps" />
         

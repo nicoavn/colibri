@@ -14,5 +14,7 @@
     <string name="col_pick_places">Pick Places</string>
     <string name="col_zone">Zone</string>
     <string name="col_finish_tour">Finish Tour</string>
+    <string name="col_give_me_tour">Gimme Tour!</string>
+    <string name="col_finish_drawer">My Tour is done!</string>
 
 </resources>

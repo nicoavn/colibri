@@ -229,7 +229,8 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f02001d;
     }
     public static final class id {
-        public static final int action_settings=0x7f050014;
+        public static final int action_settings=0x7f050017;
+        public static final int btn_give_tour=0x7f050012;
         public static final int build_custom_tour_btn=0x7f050006;
         public static final int category_label=0x7f050009;
         public static final int col_category_all=0x7f05000a;
@@ -238,16 +239,18 @@ containing a value of this type.
         public static final int col_where=0x7f05000e;
         public static final int col_zone_field=0x7f050010;
         public static final int custom_tour_submit=0x7f050011;
+        public static final int drawer_finish_btn=0x7f050016;
+        public static final int drawer_map=0x7f050015;
         public static final int hybrid=0x7f050004;
         public static final int label_where=0x7f05000d;
         public static final int label_zone=0x7f05000f;
-        public static final int map_done_btn=0x7f050013;
+        public static final int map_done_btn=0x7f050014;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
         public static final int satellite=0x7f050002;
         public static final int show_map=0x7f050005;
         public static final int terrain=0x7f050003;
-        public static final int the_map=0x7f050012;
+        public static final int the_map=0x7f050013;
         public static final int title_label=0x7f050007;
         public static final int tour_title=0x7f050008;
     }
@@ -259,6 +262,7 @@ containing a value of this type.
         public static final int custom_set_up=0x7f030001;
         public static final int map_view_layout=0x7f030002;
         public static final int marker_layout=0x7f030003;
+        public static final int route_drawer_view_layout=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;
@@ -294,7 +298,9 @@ containing a value of this type.
         public static final int col_custom_tour_btn=0x7f060023;
         public static final int col_custom_tour_name=0x7f06001d;
         public static final int col_eco=0x7f060021;
+        public static final int col_finish_drawer=0x7f060028;
         public static final int col_finish_tour=0x7f060026;
+        public static final int col_give_me_tour=0x7f060027;
         public static final int col_pick_places=0x7f060024;
         public static final int col_show_map_btn_text=0x7f06001c;
         public static final int col_tour_category=0x7f06001e;

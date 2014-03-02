@@ -85,9 +85,14 @@
 
     <Button
         android:id="@+id/custom_tour_submit"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
         android:text="@string/col_pick_places" />
+
+    <Button
+        android:id="@+id/btn_give_tour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/col_give_me_tour" />
     
 </LinearLayout>

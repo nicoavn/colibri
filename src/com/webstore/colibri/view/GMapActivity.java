@@ -144,17 +144,27 @@ public class GMapActivity extends FragmentActivity {
 		map.animateCamera(zoom);
 	}
 
-	private void addMarkers(GoogleMap map, ArrayList<Marker> places) {
+	private void addMarkers(GoogleMap map, ArrayList<Marker> markers) {
 
-		places.add(map.addMarker(new MarkerOptions().position(
-				new LatLng(19.450892, -70.694625)).title(
-				"Monumento a los Héroes de la Restauración")));
+		ArrayList<Place> currentPlaces;
+		currentPlaces = GlobalActivityHandlerUtility.customTourSetUp.choosenPlaces;
+		if (currentPlaces != null && currentPlaces.size() > 0) {
+			markers = new ArrayList<Marker>();
+			for (Place pl : currentPlaces) {
+				markers.add(map.addMarker(new MarkerOptions().position(
+						pl.getLocation()).title(pl.getName())));
+			}
+		} else {
+			markers.add(map.addMarker(new MarkerOptions().position(
+					new LatLng(19.450892, -70.694625)).title(
+					"Monumento a los Héroes de la Restauración")));
 
-		places.add(map.addMarker(new MarkerOptions().position(
-				new LatLng(19.442354, -70.68248)).title("PCUMM")));
+			markers.add(map.addMarker(new MarkerOptions().position(
+					new LatLng(19.442354, -70.68248)).title("PCUMM")));
 
-		places.add(map.addMarker(new MarkerOptions().position(
-				new LatLng(19.445672, -70.714066))
-				.title("Las Aromas Golf Club")));
+			markers.add(map.addMarker(new MarkerOptions().position(
+					new LatLng(19.445672, -70.714066)).title(
+					"Las Aromas Golf Club")));
+		}
 	}
 }
